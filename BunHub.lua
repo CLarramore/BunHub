@@ -158,7 +158,7 @@ function RUN_FUNCTION(name, extension, configOpt)
             Style = Enum.EasingStyle.Linear,
             Direction = Enum.EasingDirection.In,
             TIME = .4
-        }).Completed:Wait(1)
+        }).Completed:Wait()
         
         createTween(LoadBar,{BackgroundTransparency = 0}, {
             Style = Enum.EasingStyle.Linear,
@@ -215,7 +215,7 @@ function RUN_FUNCTION(name, extension, configOpt)
             Style = Enum.EasingStyle.Linear,
             Direction = Enum.EasingDirection.In,
             TIME = .4
-        }).Completed:Wait(1)
+        }).Completed:Wait()
     
         
         BlueXLoader:Destroy()

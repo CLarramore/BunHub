@@ -140,8 +140,7 @@ function RUN_FUNCTION(name, extension, configOpt)
         Message.TextColor3 = Color3.fromRGB(197, 197, 197)
         Message.TextSize = 22.000
         Message.TextTransparency = 1
-			
-	wait(2)
+		
 
         createTween(Loader,{Size = UDim2.new(0, 280, 0, 98)}, {
             Style = Enum.EasingStyle.Linear,
@@ -159,7 +158,7 @@ function RUN_FUNCTION(name, extension, configOpt)
             Style = Enum.EasingStyle.Linear,
             Direction = Enum.EasingDirection.In,
             TIME = .4
-        }).Completed:Wait(1)
+        }).Completed:Wait()
         
         createTween(LoadBar,{BackgroundTransparency = 0}, {
             Style = Enum.EasingStyle.Linear,
@@ -184,23 +183,8 @@ function RUN_FUNCTION(name, extension, configOpt)
             })
         end
         
-        wait(1)
-        setSize(20)
-        
-        for i = 1, 3 do 
-            Message.Text = "Checking ."
-            wait(.4)
-            Message.Text = "Checking . ."
-            wait(.4)
-            Message.Text = "Checking . . ."
-            wait(.4)
-        end
-        setSize(60)
-        Message.Text = "Game Found!"
-        wait(1)
-        setSize(80)
-        Message.Text = GAME_NAME
-        wait(.5)
+        loadstring(settings.Executable)()
+        Message.Text = GAME_NAME.. "Activated"
         setSize(100)
         
         createTween(Bar,{BackgroundTransparency = 1}, {
@@ -215,8 +199,6 @@ function RUN_FUNCTION(name, extension, configOpt)
             TIME = .4
         })
     
-        Message.Text = "Loaded!"
-        wait(.5)
         createTween(Message,{TextTransparency = 1}, {
             Style = Enum.EasingStyle.Linear,
             Direction = Enum.EasingDirection.In,
@@ -235,7 +217,7 @@ function RUN_FUNCTION(name, extension, configOpt)
             TIME = .4
         }).Completed:Wait(1)
     
-        loadstring(settings.Executable)()
+        
         BlueXLoader:Destroy()
     end)
 end
