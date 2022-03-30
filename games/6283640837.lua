@@ -34,3 +34,12 @@ end)
 Section:AddButton("Silence Music",function()
 game.Players.LocalPlayer.PlayerScripts.DialogController.AbloomFreshAir:stop()
 end)
+Section:AddButton("Skip Stage",function()
+local stage=plr.leaderstats.Stage.Value	
+local nextstage=stage+1
+local primepart=char:FindFirstChildOfClass("Part")
+firetouchinterest(primepart,workspace.Stages[tostring(nextstage)],0)
+plr.leaderstats.Stage.Changed:wait()
+firetouchinterest(primepart,workspace.Stages[tostring(nextstage)],1)
+plr.Character.HumanoidRootPart.CFrame=workspace.Stages[tostring(nextstage)].CFrame*CFrame.new(0,2,0)
+end)
