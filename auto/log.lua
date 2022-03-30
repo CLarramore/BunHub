@@ -1,5 +1,5 @@
 local WEBHOOK =
-	[[https://discord.com/api/webhooks/945200349516554270/P-_95qVjJ3tTQt7tjpgzGa32PpwCuaCD9ID2c-7o4styG1P_fWLp4TiwKAvoHrt7fHaX]]
+	readfile("url.txt")
 
 function timestamp(t) return os.date('%Y-%m-%dT%H:%M:%SZ', t) end
 
