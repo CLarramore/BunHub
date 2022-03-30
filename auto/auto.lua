@@ -16,8 +16,8 @@ getgenv().exec = function(n, ...)
 	end
 end
 
-loadfile'aafk.lua'()
-loadfile'log.lua'()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/auto/aafk.lua")()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/auto/log.lua")()
 -- loadfile'rspy.lua'()
 --[[
 local n = ('_%011d.lua'):format(game.PlaceId)
