@@ -5,7 +5,7 @@ TABMENU="Tab MENU";
 LastTab="View Last Tab";
 Label1="Updated on 2022-03-30";
 Label2="Created by bunnypadding#3576";};
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Snakeboy99/BLUEX/main/BlueXLibrary.lua",options))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Snakeboy99/BLUEX/main/BlueXLibrary.lua"))()
 local rebirthloop=false
 
 function instantrebirth()
@@ -19,7 +19,7 @@ function instantrebirth()
 	repeat wait() until plr.Character:FindFirstChildOfClass("Part")~=nil
 	end
 	
-local Window=library.new("Escape Fat Man")
+local Window=library.new("Escape Fat Man",options)
 local FunnyTab=Window:make_tab("Main",true)
 local Section=FunnyTab:addSection("Main")
 
