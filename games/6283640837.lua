@@ -1,4 +1,4 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/auto/aafk.lua"))
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/auto/auto.lua"))
 local plr=game.Players.LocalPlayer
 local options={
 TABMENU="Tab MENU";
@@ -32,6 +32,6 @@ instantrebirth()
 end
 end))
 end)
-section:AddButton("Silence Music",function()
+Section:AddButton("Silence Music",function()
 game.Players.LocalPlayer.PlayerScripts.DialogController.AbloomFreshAir:stop()
 end)
