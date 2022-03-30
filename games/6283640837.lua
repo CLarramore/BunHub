@@ -36,10 +36,14 @@ game.Players.LocalPlayer.PlayerScripts.DialogController.AbloomFreshAir:stop()
 end)
 Section:AddButton("Skip Stage",function()
 local stage=plr.leaderstats.Stage.Value	
+if stage==52 then
+game.ReplicatedStorage.Rebirth:FireServer()
+else
 local nextstage=stage+1
 local primepart=plr.Character.HumanoidRootPart--:FindFirstChildOfClass("Part")
 firetouchinterest(primepart,workspace.Stages[tostring(nextstage)],0)
 plr.leaderstats.Stage.Changed:wait()
 firetouchinterest(primepart,workspace.Stages[tostring(nextstage)],1)
 plr.Character.HumanoidRootPart.CFrame=workspace.Stages[tostring(nextstage)].CFrame*CFrame.new(0,2,0)
+end
 end)
