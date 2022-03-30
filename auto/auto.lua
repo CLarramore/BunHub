@@ -19,6 +19,7 @@ end
 loadfile'aafk.lua'()
 loadfile'log.lua'()
 -- loadfile'rspy.lua'()
-
+--[[
 local n = ('_%011d.lua'):format(game.PlaceId)
 if isfile(n) then print('LOADFILE FOR PLACE:', pcall(loadfile(n))) end
+]]--
