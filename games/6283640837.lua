@@ -37,7 +37,7 @@ end)
 Section:AddButton("Skip Stage",function()
 local stage=plr.leaderstats.Stage.Value	
 local nextstage=stage+1
-local primepart=char:FindFirstChildOfClass("Part")
+local primepart=plr.Character:FindFirstChildOfClass("Part")
 firetouchinterest(primepart,workspace.Stages[tostring(nextstage)],0)
 plr.leaderstats.Stage.Changed:wait()
 firetouchinterest(primepart,workspace.Stages[tostring(nextstage)],1)
