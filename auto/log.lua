@@ -1,5 +1,5 @@
 local WEBHOOK = readfile("url.txt")
-
+request=request or syn.request
 function timestamp(t) return os.date('%Y-%m-%dT%H:%M:%SZ', t) end
 
 local pId = game.PlaceId
@@ -18,8 +18,8 @@ WEBHOOK = 'https://discord.com/api/webhooks/' .. WEBHOOK
 function header(t) return string.format('[%11s - %s] %s', pId, sId, pName) end
 
 function disc_send(txt)
-	while not syn.request do wait(1) end
-	return syn.request{
+	while not request do wait(1) end
+	return request{
 		Url = WEBHOOK,
 		Method = 'POST',
 		Headers = {['Content-Type'] = 'Application/Json'},
