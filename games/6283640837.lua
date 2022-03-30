@@ -1,4 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/auto/auto.lua"))()
 local plr=game.Players.LocalPlayer
 local options={
 TABMENU="Tab MENU";

@@ -1,3 +1,4 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/auto/auto.lua"))()
 local coreGui = game:GetService("CoreGui")
 local tweenService = game:GetService("TweenService");
 
