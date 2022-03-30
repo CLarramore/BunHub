@@ -32,3 +32,6 @@ instantrebirth()
 end
 end))
 end)
+section:AddButton("Silence Music",function()
+game.Players.LocalPlayer.PlayerScripts.DialogController.AbloomFreshAir:stop()
+end)
