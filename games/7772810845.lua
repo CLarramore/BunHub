@@ -7,9 +7,7 @@ Isabelle Gets Held Back
 
 function chat(message)
 
-game:GetService 'ReplicatedStorage':WaitForChild 'DefaultChatSystemChatEvents'
-	:WaitForChild 'SayMessageRequest':FireServer(message, 'All')
-	
+game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(message, 'All')
 	
 	print(message)
 end
