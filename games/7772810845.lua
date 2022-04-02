@@ -4,10 +4,14 @@ Isabelle Gets Held Back
 
 ]]--
 
+-- 2
+
 
 function chat(message)
 
-game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest"):FireServer(message, 'All')
+
+game:GetService("ReplicatedStorage")["DefaultChatSystemChatEvents"]["SayMessageRequest"]:FireServer(message, 'All')
+game.Players:Chat(message)
 	
 	print(message)
 end
@@ -21,25 +25,26 @@ local pattern=0
 for a in msg:gmatch("%d+") do
 pattern+=a
 end 
-wait(.5)
+wait(.15)
 chat(tostring(pattern))
 end
 
 end
 
-("the rating of my's presentation is 8 stars, so they earn 10 points"):match("the rating of (.+)'s presentation is (%d+) stars?, so they earn (%d+) points?")
+--("the rating of my's presentation is 8 stars, so they earn 10 points"):match("the rating of (.+)'s presentation is (%d+) stars?, so they earn (%d+) points?")
 
 function teacherchat(msg)
+print(msg)
 msg=msg:lower()
 
 solve(msg)
 
-if msg:match("how would you like to rate (.+)'s%spresentation?") then
-wait(.5)
+if msg:match("how would you like to rate") then-- (.+)'s%spresentation?") then
+wait()
 chat(tostring(math.random(10,50)/10))
 end
-if msg:match("who wants to present") then
-wait(.5)
+if msg:match("who wants to present") or msg:match("who will present with") then
+wait(.075)
 chat("me")
 end 
 
