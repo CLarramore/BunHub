@@ -3,7 +3,7 @@ local Bot={}
 
 function Bot:new(...)
 local Mena={}
-local settings=...
+local settings={...}
 Mena.language=settings.langauge or "en"
 Mena.chatfuel=settings.chatfuel or "True"
 
