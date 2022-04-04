@@ -19,14 +19,12 @@ Enabled=true;
 Distance=20;
 };
 
-chat=function(message,override)
+chat=function(message)
 
-override=override or false
 --rconsoleprint(message)
 game:GetService("ReplicatedStorage")["DefaultChatSystemChatEvents"]["SayMessageRequest"]:FireServer(message, 'All')
-if not override then
 game.Players:Chat(message)
-end
+
 
 end
 
@@ -187,7 +185,7 @@ function Respond(message)
 local response=Ribbon:response(message)
 response=response:gsub("_ ",""):gsub("_",""):gsub("\n","")
    if response:match("Please teach me") or response=="You love it ya ye" then else
-   chat(""..chatbotsettings.Name..": "..response, true)
+   game:GetService("ReplicatedStorage")["DefaultChatSystemChatEvents"]["SayMessageRequest"]:FireServer(""..chatbotsettings.Name..": "..response, 'All')
    end
 end
 
