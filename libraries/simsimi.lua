@@ -9,7 +9,7 @@ Mena.chatfuel=settings.chatfuel or "True"
 
 function Mena:response(message)
 local text=message
-    local Response = game:HttpGet("https://api.simsimi.net/v2/?text="..text.."&lc="..language.."&cf="..chatfuel)
+    local Response = game:HttpGet("https://api.simsimi.net/v2/?text="..text.."&lc="..Mena.language.."&cf="..Mena.chatfuel)
 	local data=HttpService:JSONDecode(Response)
 	return data.success
 	end
