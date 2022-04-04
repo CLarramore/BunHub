@@ -6,6 +6,7 @@ Isabelle Gets Held Back
 local Players=game:GetService("Players")
 local Mercury=loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 local chatter=loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/libraries/simsimi.lua"))()
+local credit=loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/libraries/credit.lua"))()
 local responders={
 auto=true,
 mathquestions=true,
@@ -37,9 +38,9 @@ Link="https://github.com/CLarramore/BunHub";
 Window=gui
 
 Window:Credit{
-Name="Bunny";
+Name=credit.Creator.Name;
 Description="Creator of the GUI";
-Discord="bunnypadding#3576";
+Discord=credit.Creator.Discord;
 V3rm="CLoggermore";
 }
 Window:Credit{

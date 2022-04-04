@@ -5,6 +5,7 @@ LastTab="View Last Tab";
 Label1="Updated on 2022-03-30";
 Label2="Created by bunnypadding#3576";};
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+local credit=loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/libraries/credit.lua"))()
 --local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Snakeboy99/BLUEX/main/BlueXLibrary.lua"))()
 local rebirthloop=false
 
@@ -29,9 +30,9 @@ Link="https://github.com/CLarramore/BunHub";
 }
 
 Window:Credit{
-Name="Bunny";
+Name=credit.Creator.Name;
 Description="Creator of this stupid GUI.";
-Discord="bunnypadding#3576";
+Discord=credit.Creator.Discord;
 V3rm="CLoggermore";
 }
 
