@@ -1,9 +1,9 @@
 local HttpService = game:GetService("HttpService")
 local Bot={}
 
-function Bot:new(...)
+function Bot:new(settings)
 local Mena={}
-local settings={...}
+local settings=settings or {}
 Mena.language=settings.langauge or "en"
 Mena.chatfuel=settings.chatfuel or "True"
 
