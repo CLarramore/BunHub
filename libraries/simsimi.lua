@@ -1,13 +1,13 @@
 local HttpService = game:GetService("HttpService")
 local Bot={}
 
-Bot:new=function(settings)
+function Bot:new(settings)
 local Mena={}
 settings=settings or ...
 Mena.language=settings.langauge or "en"
 Mena.chatfuel=settings.chatfuel or "True"
 
-function Mena:response=function(message)
+function Mena:response(message)
 local text=message
     local Response = game:HttpGet("https://api.simsimi.net/v2/?text="..text.."&lc="..language.."&cf="..chatfuel)
 	local data=HttpService:JSONDecode(Response)
