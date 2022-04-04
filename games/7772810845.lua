@@ -149,7 +149,7 @@ if responders.mathquestions then
 solve(msg)
 end
 
-if msg:match("how would you like to rate") and responders.autorate then-- (.+)'s%spresentation?") then
+if msg:match("how would you like to rate") and responders.rating then-- (.+)'s%spresentation?") then
 wait()
 chat(tostring(math.random(10,50)/10))
 end
