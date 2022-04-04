@@ -187,7 +187,7 @@ function Respond(message)
 local response=Ribbon:response(message)
 response=response:gsub("_ ",""):gsub("_",""):gsub("\n","")
    if response:match("Please teach me") or response=="You love it ya ye" then else
-   chat(""..chatbotsettings.Name..": "..response, false)
+   chat(""..chatbotsettings.Name..": "..response, true)
    end
 end
 
