@@ -11,6 +11,7 @@ Name="Ribbon";
 Enabled=true;
 Distance=20;
 NameVisible=true;
+chatfuel="True";
 };
 local chatbotsettings = _G.chatbotsettings or defaultsettings
 
@@ -34,7 +35,7 @@ Description="Creator of the Simsimi API that I use.";
 
 -- UI Lib --
 
-local Ribbon=chatter:new({language="en",chatfuel="True"})
+local Ribbon=chatter:new({language="en",chatfuel=chatbotsettings.chatfuel})
 
 local Chatbot=Window:Tab{
 Name="Chatbot";
@@ -69,8 +70,12 @@ Callback=function(state) chatbotsettings.NameVisible=state; end;}
 function Respond(message)
 local response=Ribbon:response(message)
 response=response:gsub("_ ",""):gsub("_",""):gsub("\n","")
-   if response:match("Please teach me") or response=="You love it ya ye" then else
+   if response:match("Please teach me") then else
+   if chatbotsettings.callchat==nil then
    game:GetService("ReplicatedStorage")["DefaultChatSystemChatEvents"]["SayMessageRequest"]:FireServer(""..((chatbotsettings.NameVisible and (chatbotsettings.Name..": ")) or "")..response, 'All')
+   else 
+   pcall(chatbotsettings.callchat(""..((chatbotsettings.NameVisible and (chatbotsettings.Name..": ")) or "")..response))
+   end
    end
 end
 
