@@ -18,7 +18,7 @@ local gui=Mercury:Create{
 Name="Chatbot";
 Link="https://github.com/CLarramore/BunHub";
 };
-
+gui:set_status("Waiting")
 gui:Credit{
 Name=credit.Creator.Name;
 Description="Creator of the GUI";
@@ -51,7 +51,13 @@ Name="Chatbot";
 Chatbot:Toggle{
 Name="Enabled";
 StartingState=chatbotsettings.Enabled;
-Callback=function(state) chatbotsettings.Enabled=state end;}
+Callback=function(state) chatbotsettings.Enabled=state
+if state==true then
+gui:Set_Status("Listening")
+else
+gui:Set_Status("Not Listening")
+end
+ end;}
 
 Chatbot:Textbox{
 Name="Bot Name";
@@ -72,6 +78,9 @@ Description="Toggles if the name is visible";
 StartingState=chatbotsettings.NameVisible;
 Callback=function(state) chatbotsettings.NameVisible=state; end;}
 
+if chatbotsettings.Enabled then
+gui:Set_Status("Listening")
+end
 -- REsponse --
 
 function Respond(message)
