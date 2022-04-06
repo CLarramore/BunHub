@@ -18,6 +18,7 @@ local chatbotsettings={
 Name="Ribbon";
 Enabled=true;
 Distance=20;
+NameVisible=true;
 };
 
 chat=function(message)
@@ -122,7 +123,11 @@ Min=1;
 Max=50;
 Callback=function(value) chatbotsettings.Distance=value end;};
 
-
+Chatbot:Toggle{
+Name="Name Visible";
+Description="Toggles if the name is visible";
+StartingState=chatbotsettings.NameVisible;
+Callback=function(state) chatbotsettings.NameVisible=state; end;}
 
 -- The Functions --
 
@@ -186,7 +191,7 @@ function Respond(message)
 local response=Ribbon:response(message)
 response=response:gsub("_ ",""):gsub("_",""):gsub("\n","")
    if response:match("Please teach me") or response=="You love it ya ye" then else
-   game:GetService("ReplicatedStorage")["DefaultChatSystemChatEvents"]["SayMessageRequest"]:FireServer(""..chatbotsettings.Name..": "..response, 'All')
+   game:GetService("ReplicatedStorage")["DefaultChatSystemChatEvents"]["SayMessageRequest"]:FireServer(""..((chatbotsettings.NameVisible and (chatbotsettings.Name..": ")) or "")..response, 'All')
    end
 end
 
