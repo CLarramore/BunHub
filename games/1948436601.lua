@@ -42,6 +42,7 @@ end
 
 _G.gui=gui
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/scripts/chatbot.lua"))
+repeat wait() until _G.Chatbot~=nil
 local Chatbot=_G.Chatbot
 
 local GameChatbot=Chatbot:Section{
