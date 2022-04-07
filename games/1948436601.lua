@@ -41,13 +41,11 @@ end
 end
 
 _G.gui=gui
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/scripts/chatbot.lua"))
-repeat wait() until _G.Chatbot~=nil
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/scripts/chatbot.lua"))()
 local Chatbot=_G.Chatbot
 
 local GameChatbot=Chatbot:Section{
 Name="Game Exclusive";};
-
 GameChatbot:Toggle{
 Name="Use Pet Name";
 Description="Uses the pet name to respond for you (unfiltered)";
