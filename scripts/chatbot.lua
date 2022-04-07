@@ -15,7 +15,7 @@ chatfuel="True";
 };
 local chatbotsettings = _G.chatbotsettings or defaultsettings
 
-gui=_G.gui
+local gui=_G.gui
 
 gui:Credit{
 Name=credit.Creator.Name;
@@ -55,8 +55,8 @@ Callback=function(text) chatbotsettings.Name=text end;
 Chatbot:Slider{
 Name="Distance";
 Default=chatbotsettings.Distance;
-Min=1;
-Max=50;
+Min=0;
+Max=100;
 Callback=function(value) chatbotsettings.Distance=value end;};
 
 Chatbot:Toggle{
@@ -69,12 +69,16 @@ Callback=function(state) chatbotsettings.NameVisible=state; end;}
 
 function Respond(message)
 local response=Ribbon:response(message)
-response=response:gsub("_ ",""):gsub("_",""):gsub("\n","")
+response=response:gsub("\n","")
    if response:match("Please teach me") then else
+   
+   local output=("%s%s"):format((chatbotsettings.NameVisible and (chatbotsettings.Name..": ") or ""),response)
+   
+   --"..((chatbotsettings.NameVisible and (chatbotsettings.Name..": ")) or "")..response)
    if chatbotsettings.callchat==nil then
-   game:GetService("ReplicatedStorage")["DefaultChatSystemChatEvents"]["SayMessageRequest"]:FireServer(""..((chatbotsettings.NameVisible and (chatbotsettings.Name..": ")) or "")..response, 'All')
+   game:GetService("ReplicatedStorage")["DefaultChatSystemChatEvents"]["SayMessageRequest"]:FireServer(output, 'All')
    else 
-   pcall(chatbotsettings.callchat(""..((chatbotsettings.NameVisible and (chatbotsettings.Name..": ")) or "")..response))
+   pcall(chatbotsettings.callchat(output))
    end
    end
 end

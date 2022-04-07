@@ -85,7 +85,7 @@ end
 
 function Respond(message)
 local response=Ribbon:response(message)
-response=response:gsub("_ ",""):gsub("_",""):gsub("\n","")
+response=response:gsub("\n","")
    if response:match("Please teach me") or response=="You love it ya ye" then else
    game:GetService("ReplicatedStorage")["DefaultChatSystemChatEvents"]["SayMessageRequest"]:FireServer(""..((chatbotsettings.NameVisible and (chatbotsettings.Name..": ")) or "")..response, 'All')
    end
