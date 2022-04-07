@@ -34,4 +34,4 @@ events["Event_MakePetRPName"]:FireServer(output)
 end
 
 _G.gui=gui
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/scripts/chatbotgui.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/scripts/chatbot.lua"))()
