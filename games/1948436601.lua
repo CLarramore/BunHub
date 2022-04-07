@@ -23,7 +23,7 @@ Link="https://github.com/CLarramore/BunHub";
 };
 gui:Credit{
 Name=credit.Creator.Name;
-Description="Creating this chatbot script.";
+Description="Creator of this script.";
 Discord=credit.Creator.Discord;
 };
 if plr.Character:FindFirstChild("ModelPet_Bunny")==nil then
@@ -34,4 +34,5 @@ events["Event_MakePetRPName"]:FireServer(output)
 end
 
 _G.gui=gui
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/scripts/chatbot.lua"))()
+local Chatbot=loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/scripts/chatbot.lua"))
+
