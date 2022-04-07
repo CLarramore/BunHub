@@ -72,7 +72,7 @@ local response=Ribbon:response(message)
 response=response:gsub("\n","")
    if response:match("Please teach me") then else
    
-   local output=("%s%s"):format((chatbotsettings.NameVisible and (chatbotsettings.Name..": ") or ""),response)
+   local output=("%s"):format((chatbotsettings.NameVisible and (chatbotsettings.Name..": ") or "")..response)
    
    --"..((chatbotsettings.NameVisible and (chatbotsettings.Name..": ")) or "")..response)
    if chatbotsettings.callchat==nil then
