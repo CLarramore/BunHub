@@ -41,7 +41,8 @@ end
 end
 
 _G.gui=gui
-local Chatbot=loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/scripts/chatbot.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/scripts/chatbot.lua"))
+local Chatbot=_G.Chatbot
 
 local GameChatbot=Chatbot:Section{
 Name="Game Exclusive";};

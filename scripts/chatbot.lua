@@ -98,4 +98,4 @@ Players.PlayerChatted:Connect(function(type, plr, message)
 end
 end)
 
-return Chatbot
+_G.Chatbot=Chatbot
