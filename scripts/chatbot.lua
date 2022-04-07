@@ -37,7 +37,7 @@ Description="Creator of the Simsimi API that I use.";
 
 local Ribbon=chatter:new({language="en",chatfuel=chatbotsettings.chatfuel})
 
-local Chatbot=Window:Tab{
+local Chatbot=gui:Tab{
 Name="Chatbot";
 }
 

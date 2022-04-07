@@ -27,7 +27,7 @@ Description="Creating this chatbot script.";
 Discord=credit.Creator.Discord;
 };
 if plr.Character:FindFirstChild("ModelPet_Bunny")==nil then
-events["Event_PetHandler"]:FireServer("Pet_Bunny",true
+events["Event_PetHandler"]:FireServer("Pet_Bunny",true)
 end
 _G.chatbotsettings.callchat=function(output)
 events["Event_MakePetRPName"]:FireServer(output)
