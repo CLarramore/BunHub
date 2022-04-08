@@ -1,13 +1,31 @@
 local WEBHOOK = readfile("url.txt")
 request=request or syn.request
-function timestamp(t) return os.date('%Y-%m-%dT%H:%M:%SZ', t) end
-
 local pId = game.PlaceId
 local sId = #game.JobId > 0 and game.JobId or 'PLAYTEST'
 local uId = game.Players.LocalPlayer.UserId
-local pName = pId > 0 and game.MarketplaceService:GetProductInfo(pId).Name or ''
 local enabled = true
 
+local function get_pname(pId)
+	local s, r = pcall(
+		game.MarketplaceService.GetProductInfo, game.MarketplaceService, pId)
+	return (s and r) and r.Name or nil
+end
+
+local pName = get_pname(pId)
+if not pName then
+	pName = ''
+	spawn(
+		function()
+			local n
+			repeat
+				wait(3)
+				n = get_pname(pId)
+			until n
+			pName = n
+		end)
+end
+
+local function timestamp(t) return os.date('%Y-%m-%dT%H:%M:%SZ', t) end
 local fn = string.format('logs/%011d %s', pId, os.date('%Y-%m-%d %H%M%S.txt'))
 makefolder('logs')
 
@@ -15,7 +33,10 @@ if WEBHOOK:find '^https://discorda?p*%.com/api/webhooks/' then
 	WEBHOOK = WEBHOOK:sub(-87)
 end
 WEBHOOK = 'https://discord.com/api/webhooks/' .. WEBHOOK
-function header(t) return string.format('[%11s - %s] %s', pId, sId, pName) end
+
+function header(t)
+	return string.format('[%11s] : [%11s] %s - %s', uId, pId, pName, sId)
+end
 
 function disc_send(txt)
 	while not request do wait(1) end
@@ -45,9 +66,10 @@ function _G.dlog(ln, frc, ts)
 		log = last == t
 	end
 
-	if log and _G.dlog_snip:find '\n' then
-		disc_send(_G.dlog_snip)
+	local snip = _G.dlog_snip
+	if log and snip:find '\n' then
 		_G.dlog_snip = header()
+		disc_send(snip)
 	end
 end
 
