@@ -15,8 +15,14 @@ getgenv().exec = function(n, ...)
 	end
 end
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/auto/aafk.lua"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/auto/log.lua"))()
+local autos={
+'aafk.lua',
+'log.lua',
+'click-dist.lua',
+'zoom-dist.lua'}
+for a,b in next,autos do
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/auto/"..b))()
+end
 -- loadfile'rspy.lua'()
 --[[
 local n = ('games/%d.lua'):format(game.PlaceId)
