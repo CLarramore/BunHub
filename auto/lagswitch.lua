@@ -1,7 +1,7 @@
 local lag,UIS=false,game:GetService("UserInputService")
 
 function pressed(what)
-if what.KeyCode==Enum.KeyCode.Break then
+if what.KeyCode==Enum.KeyCode.Pause then
 lag=not lag
 if lag then
 settings().Network.IncomingReplicationLag=2000
