@@ -19,8 +19,7 @@ local autos={
 'aafk.lua',
 'log.lua',
 'click-dist.lua',
-'zoom-dist.lua',
-'lagswitch.lua'}
+'zoom-dist.lua'}
 for a,b in next,autos do
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/auto/"..b))()
 end
