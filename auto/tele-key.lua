@@ -1,5 +1,5 @@
 local pl = game.Players.LocalPlayer
-local key = Enum.KeyCode.Home
+local key = Enum.KeyCode.LeftAlt
 local mouse = pl:GetMouse()
 
 if _G.tp_ev then _G.tp_ev:Disconnect() end
