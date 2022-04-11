@@ -4,9 +4,9 @@ function pressed(what)
 if what.KeyCode==Enum.KeyCode.Home then
 lag=not lag
 if lag then
-settings().Network.IncomingReplicationLag=2000
+settings():GetService("NetworkSettings").IncomingReplicationLag=1000
 else
-settings().Network.IncomingReplicationLag=0
+settings():GetService("NetworkSettings").IncomingReplicationLag=0
 end end end
 
 UIS.InputBegan:connect(pressed)
