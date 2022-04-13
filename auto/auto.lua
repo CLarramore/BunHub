@@ -20,7 +20,8 @@ local autos={
 'log.lua',
 'click-dist.lua',
 'zoom-dist.lua',
-'tele-key.lua'}
+'tele-key.lua'}--should i bind this to tele-key or what?
+--'esp.lua'}--(soon)
 for a,b in next,autos do
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CLarramore/BunHub/main/auto/"..b))()
 end

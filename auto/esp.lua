@@ -14,7 +14,7 @@ If you do not change "nil", the defaults will take place.
 ]] --
 --
 _G.ESP_Settings = {
-	Enabled = true,
+	Enabled = false,
 
 	ShowQuad = true,
 	ShowName = true,
@@ -32,7 +32,7 @@ _G.ESP_Settings = {
 	GetColour = function(box)
 		local p = box.Player
 		if p and p.Team then return p.Team.TeamColor.Color end
-		return Color3.fromRGB(255, 170, 0)
+		return Color3.fromRGB(255, 179, 207)
 	end,
 }
 
