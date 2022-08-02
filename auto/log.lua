@@ -146,6 +146,6 @@ _G.dlog_evts = {
 _G.dlog_snip = header()
 _G.dlog_long = header()
 _G.dlog('CHAT STREAM SUCCESSFULLY STARTED', true)
-for _, player in pairs(game.Players:GetChildren()) do
+for _, player in pairs(game.Players:GetPlayers()) do
 	spawn(function() player_add(player) end)
 end
